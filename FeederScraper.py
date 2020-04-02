@@ -65,6 +65,11 @@ class FeederScraper:
         # print(rows[2])
         # print("\n")
 
+        # initiate csv
+        file = open('extract.csv','w', newline='')
+        writer = csv.writer(file,delimiter=',')
+        writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)'])
+
         # mencari link yang belum memiliki akm
         i = 0
         prodi_not_empty = 0
@@ -122,15 +127,30 @@ class FeederScraper:
                             row_data = []
                             for column_akm in columns_akm:
                                 # print(column_akm.text.replace('			', '').replace(' 		', ''))
-                                row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                # print(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                # filewriter.writerow([column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')])
+                                if column_akm.text=='' :
+                                    row_data.append(' ')
+                                else :
+                                    row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                            writer.writerow(row_data)
+
+                            # each individual row_data
+                            # print(row_data)
+
                             table_data.append(row_data)
                         r += 1
                     prodi_not_empty += 1
             i += 1
-        print(table_data)
+
+        # semua data
+        # print(table_data)
+
+        # close file excel
+        file.close()
 
         # jumlah data yang tidak kosong
-        # print(prodi_not_empty)
+        # print(prodi_not_em pty)
 
 # Akhir Class FeederScraper
 url = 'http://private-feeder.ulm.ac.id/'
