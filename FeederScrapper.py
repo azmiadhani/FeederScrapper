@@ -83,8 +83,8 @@ class FeederScraper:
 
     def main(self):
         # tes get fakultas
-        print(self.get_fakultas('Pendidikan Guru Pendidikan Anak Usia Dini'))
-        exit()
+        # print(self.get_fakultas('Pendidikan Guru Pendidikan Anak Usia Dini'))
+        # exit()
 
         session = requests.Session()
 
@@ -134,7 +134,7 @@ class FeederScraper:
                 # exit()
 
                 # initiate csv
-                nama_file = date.today().strftime("tanggal_%d-%m-%Y") + '_' + datetime.now().strftime("jam_%H-%M-%S")+'.csv'
+                nama_file = 'csv_output/' + date.today().strftime("tanggal_%d-%m-%Y") + '_' + datetime.now().strftime("jam_%H-%M-%S") + '.csv'
                 file = open(nama_file,'w', encoding='utf-8',newline='')
                 writer = csv.writer(file,delimiter=',')
                 writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)', 'Program Studi', 'Fakultas'])
