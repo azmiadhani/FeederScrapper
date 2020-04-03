@@ -2,7 +2,7 @@
 
 [![Python 3.8.2](https://img.shields.io/badge/python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-382/)
 
-Web Scrapper for feeder
+Web Scrapper for Feeder
 
 ## Screenshot
 ![Screenshot](https://github.com/azmiadhani/FeederScrapper/blob/master/screenshot/1.png)
@@ -38,9 +38,13 @@ Untuk default launch-nya bisa menggunakan command diatas, namun cookies expiring
 python FeederScrapper.py --cookie COOKIEVALUE --semester SEMESTERVALUE --report ON/OFF
 ```
 
+## Configuration
+
+Untuk konfigurasi pencocokan program studi dan fakultas berada di file prodixfakultas.csv
+
 
 ## Authors
 
-* **Azmi Adhani**
+* **Azmi Adhani** 
 
-Lihat juga [contributors](https://github.com/azmiadhani/FeederScrapper/contributors) yang berpartisipasi di project ini.
+Lihat juga [Kontributor](https://github.com/azmiadhani/FeederScrapper/contributors) yang berpartisipasi di project ini.

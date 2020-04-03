@@ -13,6 +13,11 @@ import argparse
 # untuk waktu
 from datetime import date
 from datetime import datetime
+# for remov_duplicates() function
+from collections import Counter
+# for lower_rd_r2() function
+import re
+
 
 # Awal Class FeederScraper
 class FeederScraper:
@@ -32,14 +37,53 @@ class FeederScraper:
         # report
         self.report = report
 
+    def remove_duplicates(self, input):
+        # split input string separated by space
+        input = input.split(" ")
+
+        # joins two adjacent elements in iterable way
+        for i in range(0, len(input)):
+            input[i] = "".join(input[i])
+
+            # now create dictionary using counter method
+        # which will have strings as key and their
+        # frequencies as value
+        UniqW = Counter(input)
+
+        # joins two adjacent elements in iterable way
+        s = " ".join(UniqW.keys())
+        return s
+
+    # lowering, remove duplicate words, remove 2 letter words
+    def lower_rd_r2(self, input):
+        input_new = input.lower()
+        input_new = self.remove_duplicates(input_new)
+        input_new = input_new.replace("-", " ")
+        input_new = re.sub(r'\b\w{1,2}\b', '', input_new).lstrip(' ')
+        return input_new
+
+    def get_fakultas(self, input):
+        # csv prodi feeder
+        prodi_new = self.lower_rd_r2(input)
+        fakultas = " ";
+        # csv dari database sia_m_prodi relasi sia_m_fakultas
+        prodixfakultas = csv.reader(open('prodixfakultas.csv', "rt", encoding='utf-8'), delimiter=",")
+        for row in prodixfakultas:
+            if prodi_new in row[0].lower():
+                fakultas = row[1]
+                break
+        return fakultas
+
     def main(self):
+
         session = requests.Session()
 
         # get(url, headers -- berfungsi untuk menghindari deteksi bahwa kita lagi scrapping)
         try :
             result = session.post(self.url, headers=self.header,data=self.payload)
             if result.status_code != 200:
-                report_error.append('Error ' + str(result.status_code) + ' - ' + links.attrs['href']);
+                print('Error ' + str(result.status_code));
+                exit()
             else:
                 # untuk memastikan bahwa url accessible dengan keterangan
                 # 200 OK
@@ -83,7 +127,7 @@ class FeederScraper:
                 nama_file = 'extract.csv'
                 file = open(nama_file,'w', encoding='utf-8',newline='')
                 writer = csv.writer(file,delimiter=',')
-                writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)'])
+                writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)', 'Program Studi', 'Fakultas'])
 
                 # mencari link yang belum memiliki akm
                 i = 0
@@ -100,6 +144,15 @@ class FeederScraper:
 
                         # Output Nama Prodi
                         # Select a href ke 3 yang beiriskan link yang belum memiliki akm
+                        get_prodi = row.findChildren(['td'])
+
+                        # dapatkan prodi dan fakultas
+                        prodi = get_prodi[1].text
+                        fakultas = self.get_fakultas(prodi)
+                        prodixfakultas=[]
+                        prodixfakultas.append(prodi)
+                        prodixfakultas.append(fakultas)
+
                         links = row.findChildren(['a'])[2]
                         # url akm
                         # print(links.attrs['href'])
@@ -108,7 +161,7 @@ class FeederScraper:
                         # membuka url akm
                         url_akm = links.attrs['href'];
                         result_akm = session.post(url_akm, headers=self.header)
-                        if result_akm.status_code != 200 :
+                        if result_akm.status_code != 200:
                             report_error.append('Error ' + str(result_akm.status_code) + ' - ' + links.attrs['href']);
                         else :
                             # Lihat hasil
@@ -129,6 +182,7 @@ class FeederScraper:
                                     columns_akm = row_akm.findChildren(['td'])
                                     # mengambil satu column dari semua column
                                     row_data = []
+                                    # tambahkan data utama
                                     for column_akm in columns_akm:
                                         # print(column_akm.text.replace('			', '').replace(' 		', ''))
                                         # print(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
@@ -137,6 +191,11 @@ class FeederScraper:
                                             row_data.append(' ')
                                         else :
                                             row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                    # tambahkan prodi dan fakultas
+                                    for pf in prodixfakultas:
+                                        row_data.append(pf)
+
+                                    # write row ke csv
                                     writer.writerow(row_data)
 
                                     # each individual row_data
