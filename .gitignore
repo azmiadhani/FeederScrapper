@@ -125,5 +125,6 @@ dmypy.json
 .pyre/
 
 # Output file
-#extract.csv
-#error.txt
+extract.csv
+error.txt
+.idea
