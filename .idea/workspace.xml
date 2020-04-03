@@ -38,7 +38,28 @@
       <recent name="C:\Users\ASUS\PycharmProjects\feederscrapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FeederScrapper">
+  <component name="RunManager" selected="Python.FeederScrapper (1)">
+    <configuration name="FeederScrapper (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="feederscrapper" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FeederScrapper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="FeederScrapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="feederscrapper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="feederscrapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="findfak" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="feederscrapper" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,28 +93,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/feederscrapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="white_house" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="feederscrapper" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/white_house.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/findfak.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.FeederScrapper (1)" />
+        <item itemvalue="Python.findfak" />
         <item itemvalue="Python.FeederScrapper" />
         <item itemvalue="Python.withcookie (1)" />
         <item itemvalue="Python.withcookie" />
-        <item itemvalue="Python.white_house" />
-        <item itemvalue="Python.feederscrapper" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585892455739</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="file_open character encoding fixing">
+      <created>1585903819087</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585903819087</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,37 +250,38 @@
     <MESSAGE value="Renaming main file" />
     <MESSAGE value="Fix lupa release development" />
     <MESSAGE value="added screenshot" />
-    <option name="LAST_COMMIT_MESSAGE" value="added screenshot" />
+    <MESSAGE value="file_open character encoding fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="file_open character encoding fixing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1366.738@0.30.1366.738" timestamp="1585883793395" />
-    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585892454339">
+    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585903818164">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585892454339" />
+    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585903818164" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1585884444052">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1585884444052" />
-    <state width="539" height="610" key="GridCell.Tab.0.bottom" timestamp="1585903521190">
+    <state width="537" height="610" key="GridCell.Tab.0.bottom" timestamp="1585919359342">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="539" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1585903521190" />
-    <state width="539" height="610" key="GridCell.Tab.0.center" timestamp="1585903521189">
+    <state width="537" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1585919359342" />
+    <state width="537" height="610" key="GridCell.Tab.0.center" timestamp="1585919359342">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="539" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1585903521189" />
-    <state width="539" height="610" key="GridCell.Tab.0.left" timestamp="1585903521189">
+    <state width="537" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1585919359342" />
+    <state width="537" height="610" key="GridCell.Tab.0.left" timestamp="1585919359342">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="539" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1585903521189" />
-    <state width="539" height="610" key="GridCell.Tab.0.right" timestamp="1585903521189">
+    <state width="537" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1585919359342" />
+    <state width="537" height="610" key="GridCell.Tab.0.right" timestamp="1585919359342">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="539" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1585903521189" />
+    <state width="537" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1585919359342" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1585828819554">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -298,10 +306,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="184" y="41" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1585884435182" />
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585892460193">
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585903821988">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585892460193" />
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585903821988" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
