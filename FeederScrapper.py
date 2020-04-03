@@ -86,7 +86,7 @@ class FeederScraper:
 
             # initiate csv
             nama_file = 'extract.csv'
-            file = open(nama_file,'w', newline='')
+            file = open(nama_file,'w', encoding='utf-8',newline='')
             writer = csv.writer(file,delimiter=',')
             writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)'])
 
@@ -176,7 +176,7 @@ class FeederScraper:
                     print(rep[1])
 
             # Error Reporting to error.txt
-            f = open("error.txt", "w+")
+            f = open("error.txt", "w+", encoding='utf-8')
             jumlah_error = 0
             for re in report_error:
                 f.write(re +" \r\n")
@@ -217,7 +217,7 @@ print('\n')
 
 
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("--cookie", default='imp9cfrlg69ko528blhkan3r14', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
+parser.add_argument("--cookie", default='su4htlotdbupebr7c0gopi1p92', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
 parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (tanpa petik)")
 parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (tanpa petik)")
 
