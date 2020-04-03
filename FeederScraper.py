@@ -1,14 +1,29 @@
 # yang diperlukan :
 # pip install beautifulsoup4
 # pip install requests
+# pip install requests
+# pip install tqdm
+#pip install argparse
+
+# untuk excel
 import csv
+# untuk cprint
+import sys
+from termcolor import colored, cprint
+# untuk requests
 import requests
+# untuk beautifulsoup
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
+from tqdm import tqdm
+# python argument
+import argparse
+# untuk waktu
+from datetime import date
+from datetime import datetime
 
 # Awal Class FeederScraper
 class FeederScraper:
-    def __init__(self, url, header, payload):
+    def __init__(self, url, header, payload, report):
 
         # url yang ingin di scraping hiyahiya
         self.url = url
@@ -21,64 +36,76 @@ class FeederScraper:
         # Form Data
         self.payload = payload
 
+        # report
+        self.report = report
+
     def main(self):
         session = requests.Session()
 
         # get(url, headers -- berfungsi untuk menghindari deteksi bahwa kita lagi scrapping)
-        result = session.post(self.url, headers=self.header,data=self.payload)
+        try :
+            result = session.post(self.url, headers=self.header,data=self.payload)
 
-        # untuk memastikan bahwa url accessible dengan keterangan
-        # 200 OK
-        # 401 Unauthorized
-        # 403 Forbidden
-        # 407 Proxy Auth Required
-        # maka :
-        # print(result.status_code)
-        # print(result.headers)
-        # print(result.text)
-        # exit()
+            # untuk memastikan bahwa url accessible dengan keterangan
+            # 200 OK
+            # 401 Unauthorized
+            # 403 Forbidden
+            # 407 Proxy Auth Required
+            # maka :
+            # print(result.status_code)
+            # print(result.headers)
+            # print(result.text)
+            # exit()
 
-        # mendapatkan informasi header
-        # print(result.headers)
+            # mendapatkan informasi header
+            # print(result.headers)
 
-        # menyimpan konten website
-        src = result.content
-        # print(src)
-        # exit()
+            # menyimpan konten website
+            src = result.content
+            # print(src)
+            # exit()
 
-        # objek BeautifulSoup
-        soup = BeautifulSoup(src, features="html.parser")
+            # objek BeautifulSoup
+            soup = BeautifulSoup(src, features="html.parser")
 
-        # mencari semua tag yang diinginkan
-        # links = soup.find_all("img")
-        table = soup.findChildren('table', {"class": "table table-striped table-condensed"})
+            # mencari semua tag yang diinginkan
+            # links = soup.find_all("img")
+            table = soup.findChildren('table', {"class": "table table-striped table-condensed"})
 
-        # This will get the first (and only) table. Your page may have more.
-        my_table = table[0]
+            # This will get the first (and only) table. Your page may have more.
+            my_table = table[0]
 
-        # You can find children with multiple tags by passing a list of strings
-        # rows = my_table.findChildren(['th', 'tr'])
-        rows = my_table.findChildren(['tr'])
+            # You can find children with multiple tags by passing a list of strings
+            # rows = my_table.findChildren(['th', 'tr'])
+            rows = my_table.findChildren(['tr'])
 
-        # tes hasil pencarian
-        # print(rows[2])
-        # print(rows[2])
-        # print("\n")
+            # tes hasil pencarian
+            # print(rows)
+            # print(rows[2])
+            # exit()
 
-        # initiate csv
-        file = open('extract.csv','w', newline='')
-        writer = csv.writer(file,delimiter=',')
-        writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)'])
+            # initiate csv
+            nama_file = 'extract.csv'
+            file = open(nama_file,'w', newline='')
+            writer = csv.writer(file,delimiter=',')
+            writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)'])
 
-        # mencari link yang belum memiliki akm
-        i = 0
-        prodi_not_empty = 0
-        table_data = []
-        for row in rows:
-            if i >= 2 and i <= 4:  # 0 dan 1 adalah header dari table
-                # Select a href ke 3 yang beiriskan link yang belum memiliki akm
-                links = row.findChildren(['a'])[2]
-                if links.text != "0":
+            # mencari link yang belum memiliki akm
+            i = 0
+            prodi_not_empty = 0
+            table_data = []
+            jumlah_data = 0
+            report=[]
+            report_error=[]
+            for row in tqdm(rows):
+                # if i == 44 : # 0 dan 1 adalah header dari table
+                if i >= 2 : # 0 dan 1 adalah header dari table
+
+                    jumlah_baris = 0
+
+                    # Output Nama Prodi
+                    # Select a href ke 3 yang beiriskan link yang belum memiliki akm
+                    links = row.findChildren(['a'])[2]
                     # url akm
                     # print(links.attrs['href'])
                     # print(links.text)
@@ -86,76 +113,130 @@ class FeederScraper:
                     # membuka url akm
                     url_akm = links.attrs['href'];
                     result_akm = session.post(url_akm, headers=self.header)
-                    # Lihat hasil
-                    # print(result_akm.text)
-                    src_akm = result_akm.content
-                    soup_akm = BeautifulSoup(src_akm, features="html.parser")
-                    table_akm = soup_akm.findChildren('table', {"class": "content"})
-                    my_table_akm = table_akm[0]
-                    rows_akm = my_table_akm.findChildren(['tr'])
-                    # lihat row akm
-                    # print(rows_akm)
+                    if result_akm.status_code != 200 :
+                        report_error.append('Error ' + str(result_akm.status_code) + ' - ' + links.attrs['href']);
+                    else :
+                        # Lihat hasil
+                        # print(result_akm.text)
+                        src_akm = result_akm.content
+                        soup_akm = BeautifulSoup(src_akm, features="html.parser")
+                        table_akm = soup_akm.findChildren('table', {"class": "content"})
+                        my_table_akm = table_akm[0]
+                        rows_akm = my_table_akm.findChildren(['tr'])
+                        # lihat row akm
+                        # print(rows_akm)
 
-                    # # Method SO
-                    # # Mengolah data agar disave ke excel
-                    # tableMatrix = []
-                    # # Here you can do whatever you want with the data! You can findAll table row headers, etc...
-                    # list_of_rows = []
-                    # jumlah_row = 0
-                    # row_start = 0
-                    # for row in my_table_akm.findAll('tr')[1:]:
-                    #     if row_start >= 1 :
-                    #         list_of_cells = []
-                    #         for cell in row.findAll('td'):
-                    #             text = cell.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')
-                    #             list_of_cells.append(text)
-                    #         list_of_rows.append(list_of_cells)
-                    #         jumlah_row += 1
-                    #     row_start += 1
-                    # tableMatrix.append((list_of_rows, list_of_cells))
-                    # # print(tableMatrix)
-                    # # print(type(tableMatrix))
-                    # # print(jumlah_row)
+                        # METODE AZMI
+                        # mengambil semua column dari masing-masing row
+                        r = 0
+                        for row_akm in rows_akm:
+                            if r >= 2:
+                                columns_akm = row_akm.findChildren(['td'])
+                                # mengambil satu column dari semua column
+                                row_data = []
+                                for column_akm in columns_akm:
+                                    # print(column_akm.text.replace('			', '').replace(' 		', ''))
+                                    # print(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                    # filewriter.writerow([column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')])
+                                    if column_akm.text=='' :
+                                        row_data.append(' ')
+                                    else :
+                                        row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                writer.writerow(row_data)
 
-                    # METODE AZMI
-                    # mengambil semua column dari masing-masing row
-                    r = 0
-                    for row_akm in rows_akm:
-                        if r >= 2:
-                            columns_akm = row_akm.findChildren(['td'])
-                            # mengambil satu column dari semua column
-                            row_data = []
-                            for column_akm in columns_akm:
-                                # print(column_akm.text.replace('			', '').replace(' 		', ''))
-                                # print(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
-                                # filewriter.writerow([column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')])
-                                if column_akm.text=='' :
-                                    row_data.append(' ')
-                                else :
-                                    row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
-                            writer.writerow(row_data)
+                                # each individual row_data
+                                # print(row_data)
 
-                            # each individual row_data
-                            # print(row_data)
+                                table_data.append(row_data)
 
-                            table_data.append(row_data)
-                        r += 1
-                    prodi_not_empty += 1
-            i += 1
+                                jumlah_baris += 1
+                            r += 1
+                        prodi_not_empty += 1
+                        jumlah_data=jumlah_baris+jumlah_data
+                        if jumlah_baris == 0 :
+                            color = 'red'
+                        else :
+                            color = 'blue'
+                        report_row = []
+                        report_row.append(row.findChildren(['td'])[1].text)
+                        report_row.append("Jumlah Baris : " + str(jumlah_baris))
+                        report.append(report_row)
+                        # cprint(row.findChildren(['td'])[1].text,'white')
+                        # cprint("Jumlah Baris : " + str(jumlah_baris) + '\n', color)
+                i += 1
+            # print(report)
 
-        # semua data
-        # print(table_data)
+            file.close()
 
-        # close file excel
-        file.close()
+            # reporting
+            if self.report=="on":
+                cprint('\n')
+                for rep in report:
+                    cprint(rep[0], 'white')
+                    cprint(rep[1], 'blue')
 
-        # jumlah data yang tidak kosong
-        # print(prodi_not_em pty)
+            # Error Reporting to error.txt
+            f = open("error.txt", "w+")
+            jumlah_error = 0
+            for re in report_error:
+                f.write(re +" \r\n")
+                jumlah_error+=1
+            f.close()
+
+            # Summary
+            cprint('\n')
+            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
+            cprint(' [REPORT]  ','green', end='')
+            cprint('Jumlah Error : ' + str(jumlah_error) + ' (untuk detail bisa dilihat di-file error.txt)', 'white')
+            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
+            cprint(' [INFO]  ','green', end='')
+            cprint('File csv telah disimpan dengan nama : ' + nama_file, 'white')
+            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
+            cprint(' [SELESAI]  ','green',end='')
+            cprint('Total Baris : '+str(jumlah_data), 'white')
+
+            # semua data
+            # print(table_data)
+
+            # close file excel
+
+            # jumlah data yang tidak kosong
+            # print(prodi_not_em pty)
+        except session.exceptions.HTTPError as err:
+            pass
 
 # Akhir Class FeederScraper
+
+# dieksekusi saat .py dibuka :
 url = 'http://private-feeder.ulm.ac.id/'
+cprint('Private Feeder Scrapper', 'yellow')
+cprint('Versi 1.0.0')
+cprint('\n')
+cprint('[*] dimulai @ '+date.today().strftime("/%d-%m-%Y/") + ' ' + datetime.now().strftime("%H:%M:%S"))
+cprint('\n')
+
+
+parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser.add_argument("--cookie", default='imp9cfrlg69ko528blhkan3r14', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (menggunakan petik)")
+parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (menggunakan petik)")
+parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (menggunakan petik)")
+
+
+args = parser.parse_args()
+cookie=args.cookie
+cprint('Cookie yang digunakan : ' + cookie, 'cyan')
+semester=args.semester
+cprint('Semester yang dipilih : ' + semester, 'cyan')
+report=args.report
+cprint('Report : ' + report, 'cyan')
+
+
+cprint('\n')
+
+# exit()
+
 header = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-         'Cookie':'PHPSESSID=imp9cfrlg69ko528blhkan3r14',
+         'Cookie': 'PHPSESSID=' + cookie,
          'Connection':'keep-alive',
          'Cache-Control' : 'max-age=0',
          'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
@@ -163,9 +244,9 @@ header = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image
          'Accept-Encoding':'gzip, deflate'
          }
 payload = {'jenis_chart': 'jumlahmhsnonakm',
-           'id_smt': '20182'}
+           'id_smt': semester}
 
-d = FeederScraper(url, header, payload)
+d = FeederScraper(url, header, payload, report)
 d.main()
 
 
