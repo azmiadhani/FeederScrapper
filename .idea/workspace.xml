@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeederScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodi_sample.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodixfakultas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/prodixfakultas.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585919510130</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)">
+      <created>1585922082553</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585922082553</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,37 +274,38 @@
     <MESSAGE value="added screenshot" />
     <MESSAGE value="file_open character encoding fixing" />
     <MESSAGE value="Added file : findfak.py (untuk mencari prodi dan fakultas yang sesuai)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added file : findfak.py (untuk mencari prodi dan fakultas yang sesuai)" />
+    <MESSAGE value="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1366.738@0.30.1366.738" timestamp="1585883793395" />
-    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585919509042">
+    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585926810856">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585919509042" />
+    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585926810856" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1585884444052">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1585884444052" />
-    <state width="537" height="610" key="GridCell.Tab.0.bottom" timestamp="1585921187164">
+    <state width="529" height="610" key="GridCell.Tab.0.bottom" timestamp="1585926691141">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="537" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1585921187164" />
-    <state width="537" height="610" key="GridCell.Tab.0.center" timestamp="1585921187164">
+    <state width="529" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1585926691141" />
+    <state width="529" height="610" key="GridCell.Tab.0.center" timestamp="1585926691140">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="537" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1585921187164" />
-    <state width="537" height="610" key="GridCell.Tab.0.left" timestamp="1585921187163">
+    <state width="529" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1585926691140" />
+    <state width="529" height="610" key="GridCell.Tab.0.left" timestamp="1585926691140">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="537" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1585921187163" />
-    <state width="537" height="610" key="GridCell.Tab.0.right" timestamp="1585921187164">
+    <state width="529" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1585926691140" />
+    <state width="529" height="610" key="GridCell.Tab.0.right" timestamp="1585926691141">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="537" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1585921187164" />
+    <state width="529" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1585926691141" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1585828819554">
       <screen x="0" y="30" width="1366" height="738" />
     </state>

@@ -57,17 +57,24 @@ class FeederScraper:
     # lowering, remove duplicate words, remove 2 letter words
     def lower_rd_r2(self, input):
         input_new = input.lower()
-        input_new = self.remove_duplicates(input_new)
+
+        # selain 'pendidikan' tidak boleh duplikat
+        if 'pendidikan' not in input_new:
+            input_new = self.remove_duplicates(input_new)
+
         input_new = input_new.replace("-", " ")
+        input_new = input_new.replace("-", " ")
+
         input_new = re.sub(r'\b\w{1,2}\b', '', input_new).lstrip(' ')
         return input_new
 
     def get_fakultas(self, input):
         # csv prodi feeder
         prodi_new = self.lower_rd_r2(input)
+        # print(prodi_new)
         fakultas = " ";
         # csv dari database sia_m_prodi relasi sia_m_fakultas
-        prodixfakultas = csv.reader(open('prodixfakultas.csv', "rt", encoding='utf-8'), delimiter=",")
+        prodixfakultas = csv.reader(open('prodixfakultas.csv', "rt", encoding='utf-8'), delimiter="=")
         for row in prodixfakultas:
             if prodi_new in row[0].lower():
                 fakultas = row[1]
@@ -75,6 +82,9 @@ class FeederScraper:
         return fakultas
 
     def main(self):
+        # tes get fakultas
+        print(self.get_fakultas('Pendidikan Guru Pendidikan Anak Usia Dini'))
+        exit()
 
         session = requests.Session()
 
@@ -124,7 +134,7 @@ class FeederScraper:
                 # exit()
 
                 # initiate csv
-                nama_file = 'extract.csv'
+                nama_file = date.today().strftime("tanggal_%d-%m-%Y") + '_' + datetime.now().strftime("jam_%H-%M-%S")+'.csv'
                 file = open(nama_file,'w', encoding='utf-8',newline='')
                 writer = csv.writer(file,delimiter=',')
                 writer.writerow(['No', 'NIM', 'Nama Mahasiswa', 'Periode Masuk',' Status Keluar', 'Tanggal Keluar', 'Periode Lulus/DO', 'Status Aktivitas Kuliah Mahasiswa Per Semester (AKM)', 'Program Studi', 'Fakultas'])
@@ -242,9 +252,11 @@ class FeederScraper:
                 print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
                 print(' [REPORT]  ', end='')
                 print('Jumlah Error : ' + str(jumlah_error) + ' (untuk detail bisa dilihat di-file error.txt)')
+
                 print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
-                print(' [INFO]  ', end='')
+                print(' [INFO]    ', end='')
                 print('File csv telah disimpan dengan nama : ' + nama_file)
+
                 print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
                 print(' [SELESAI]  ',end='')
                 print('Total Baris : '+str(jumlah_data))
