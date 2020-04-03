@@ -99,7 +99,7 @@ class FeederScraper:
             report_error=[]
             for row in tqdm(rows):
                 # if i == 44 : # 0 dan 1 adalah header dari table
-                if i == 2 : # 0 dan 1 adalah header dari table
+                if i >= 2 : # 0 dan 1 adalah header dari table
 
                     jumlah_baris = 0
 
@@ -217,9 +217,9 @@ print('\n')
 
 
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("--cookie", default='imp9cfrlg69ko528blhkan3r14', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (menggunakan petik)")
-parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (menggunakan petik)")
-parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (menggunakan petik)")
+parser.add_argument("--cookie", default='imp9cfrlg69ko528blhkan3r14', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
+parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (tanpa petik)")
+parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (tanpa petik)")
 
 
 args = parser.parse_args()
