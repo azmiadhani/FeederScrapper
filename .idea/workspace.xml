@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeederScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract.csv" beforeDir="false" afterPath="$PROJECT_DIR$/extract.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +37,8 @@
       <recent name="C:\Users\ASUS\PycharmProjects\feederscrapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FeederScraper">
-    <configuration name="FeederScraper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.FeederScrapper">
+    <configuration name="FeederScrapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="feederscrapper" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -52,7 +50,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FeederScraper.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ASUS\PycharmProjects\feederscrapper\FeederScrapper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FeederScraper" />
+        <item itemvalue="Python.FeederScrapper" />
         <item itemvalue="Python.withcookie (1)" />
         <item itemvalue="Python.withcookie" />
         <item itemvalue="Python.white_house" />
@@ -187,7 +185,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585890162807</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Removed color karena tidak terdeteksi di cmd windows">
+      <created>1585890971672</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585890971672</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removing extra file">
+      <created>1585891065724</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585891065724</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,17 +216,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ready to deploy" />
     <MESSAGE value="Added some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some files" />
+    <MESSAGE value="Removed color karena tidak terdeteksi di cmd windows" />
+    <MESSAGE value="Removing extra file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing extra file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1366.738@0.30.1366.738" timestamp="1585883793395" />
-    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585890970695">
+    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585891063021">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585890970695" />
+    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585891063021" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1585884444052">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -255,10 +269,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="184" y="41" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1585884435182" />
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585890975002">
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585891069023">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585890975002" />
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585891069023" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
