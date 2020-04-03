@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="">
+    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="fix directory of csv output">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeederScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScrapper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585926821478</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix directory of csv output">
+      <created>1585927980111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585927980111</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,17 +288,18 @@
     <MESSAGE value="file_open character encoding fixing" />
     <MESSAGE value="Added file : findfak.py (untuk mencari prodi dan fakultas yang sesuai)" />
     <MESSAGE value="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)" />
+    <MESSAGE value="fix directory of csv output" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix directory of csv output" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1366.738@0.30.1366.738" timestamp="1585883793395" />
-    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585926820471">
+    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585928115062">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585926820471" />
+    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585928115062" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1585884444052">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -336,10 +344,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="184" y="41" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1585884435182" />
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585926835459">
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585927982513">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585926835459" />
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585927982513" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
