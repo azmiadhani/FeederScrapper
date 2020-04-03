@@ -99,7 +99,7 @@ class FeederScraper:
             report_error=[]
             for row in tqdm(rows):
                 # if i == 44 : # 0 dan 1 adalah header dari table
-                if i >= 2 : # 0 dan 1 adalah header dari table
+                if i == 2 : # 0 dan 1 adalah header dari table
 
                     jumlah_baris = 0
 
@@ -170,10 +170,10 @@ class FeederScraper:
 
             # reporting
             if self.report=="on":
-                cprint('\n')
+                print('\n')
                 for rep in report:
-                    cprint(rep[0], 'white')
-                    cprint(rep[1], 'blue')
+                    print(rep[0])
+                    print(rep[1])
 
             # Error Reporting to error.txt
             f = open("error.txt", "w+")
@@ -184,16 +184,16 @@ class FeederScraper:
             f.close()
 
             # Summary
-            cprint('\n')
-            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
-            cprint(' [REPORT]  ','green', end='')
-            cprint('Jumlah Error : ' + str(jumlah_error) + ' (untuk detail bisa dilihat di-file error.txt)', 'white')
-            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
-            cprint(' [INFO]  ','green', end='')
-            cprint('File csv telah disimpan dengan nama : ' + nama_file, 'white')
-            cprint('[' + datetime.now().strftime("%H:%M:%S") + ']','cyan',end='')
-            cprint(' [SELESAI]  ','green',end='')
-            cprint('Total Baris : '+str(jumlah_data), 'white')
+            print('\n')
+            print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
+            print(' [REPORT]  ', end='')
+            print('Jumlah Error : ' + str(jumlah_error) + ' (untuk detail bisa dilihat di-file error.txt)')
+            print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
+            print(' [INFO]  ', end='')
+            print('File csv telah disimpan dengan nama : ' + nama_file)
+            print('[' + datetime.now().strftime("%H:%M:%S") + ']',end='')
+            print(' [SELESAI]  ',end='')
+            print('Total Baris : '+str(jumlah_data))
 
             # semua data
             # print(table_data)
@@ -209,11 +209,11 @@ class FeederScraper:
 
 # dieksekusi saat .py dibuka :
 url = 'http://private-feeder.ulm.ac.id/'
-cprint('Private Feeder Scrapper', 'yellow')
-cprint('Versi 1.0.0')
-cprint('\n')
-cprint('[*] dimulai @ '+date.today().strftime("/%d-%m-%Y/") + ' ' + datetime.now().strftime("%H:%M:%S"))
-cprint('\n')
+print('Private Feeder Scrapper')
+print('Versi 1.0.0')
+print('\n')
+print('[*] dimulai @ '+date.today().strftime("/%d-%m-%Y/") + ' ' + datetime.now().strftime("%H:%M:%S"))
+print('\n')
 
 
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
@@ -224,14 +224,14 @@ parser.add_argument("--report", default='on', help="ini adalah option untuk mena
 
 args = parser.parse_args()
 cookie=args.cookie
-cprint('Cookie yang digunakan : ' + cookie, 'cyan')
+print('Cookie yang digunakan : ' + cookie)
 semester=args.semester
-cprint('Semester yang dipilih : ' + semester, 'cyan')
+print('Semester yang dipilih : ' + semester)
 report=args.report
-cprint('Report : ' + report, 'cyan')
+print('Report : ' + report)
 
 
-cprint('\n')
+print('\n')
 
 # exit()
 
