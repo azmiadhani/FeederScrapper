@@ -65,7 +65,7 @@ class FeederScraper:
         input_new = input_new.replace("-", " ")
         input_new = input_new.replace("-", " ")
 
-        input_new = re.sub(r'\b\w{1,2}\b', '', input_new).lstrip(' ')
+        input_new = re.sub(r'\b\w{1,2}\b', '', input_new).lstrip().rstrip()
         return input_new
 
     def get_fakultas(self, input):
@@ -83,7 +83,7 @@ class FeederScraper:
 
     def main(self):
         # tes get fakultas
-        # print(self.get_fakultas('Pendidikan Guru Pendidikan Anak Usia Dini'))
+        # print(self.get_fakultas('S1 PJJ Pendidikan Guru Sekolah Dasar'))
         # exit()
 
         session = requests.Session()
@@ -200,7 +200,7 @@ class FeederScraper:
                                         if column_akm.text=='' :
                                             row_data.append(' ')
                                         else :
-                                            row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ',''))
+                                            row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')).replace(',',''))
                                     # tambahkan prodi dan fakultas
                                     for pf in prodixfakultas:
                                         row_data.append(pf)
@@ -283,7 +283,7 @@ print('\n')
 
 # membuat args
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("--cookie", default='mclqfmd8o9idsfd6cea5b9ou67', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
+parser.add_argument("--cookie", default='34lldk6825851cn32bhistdt40', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
 parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (tanpa petik)")
 parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (tanpa petik)")
 

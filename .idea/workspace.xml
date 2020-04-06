@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="fix directory of csv output">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="Test push as azmiadhani@gmail.com">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeederScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodixfakultas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/prodixfakultas.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="azmiadhani &lt;azmiadhani@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZyRUqWqzxKGVGZZnlXEXK7vMkE" />
@@ -263,7 +269,28 @@
       <option name="project" value="LOCAL" />
       <updated>1585927980111</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix directory of csv output">
+      <created>1585928115956</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585928115956</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Membuat folder output csv">
+      <created>1585928144132</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585928144132</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Test push as azmiadhani@gmail.com">
+      <created>1585928259226</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585928259226</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,7 +298,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -289,37 +318,39 @@
     <MESSAGE value="Added file : findfak.py (untuk mencari prodi dan fakultas yang sesuai)" />
     <MESSAGE value="Penambahan pengisian data Program Studi dan Fakultas pada file output (.csv)" />
     <MESSAGE value="fix directory of csv output" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix directory of csv output" />
+    <MESSAGE value="Membuat folder output csv" />
+    <MESSAGE value="Test push as azmiadhani@gmail.com" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test push as azmiadhani@gmail.com" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.30.1366.738@0.30.1366.738" timestamp="1585883793395" />
-    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1585928143187">
+    <state x="337" y="30" key="CommitChangelistDialog2" timestamp="1586090872240">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1585928143187" />
+    <state x="337" y="30" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1586090872240" />
     <state x="463" y="154" key="FileChooserDialogImpl" timestamp="1585884444052">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1585884444052" />
-    <state width="529" height="610" key="GridCell.Tab.0.bottom" timestamp="1585927920915">
+    <state width="529" height="610" key="GridCell.Tab.0.bottom" timestamp="1586147514493">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="529" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1585927920915" />
-    <state width="529" height="610" key="GridCell.Tab.0.center" timestamp="1585927920914">
+    <state width="529" height="610" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1586147514493" />
+    <state width="529" height="610" key="GridCell.Tab.0.center" timestamp="1586147514493">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="529" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1585927920914" />
-    <state width="529" height="610" key="GridCell.Tab.0.left" timestamp="1585927920914">
+    <state width="529" height="610" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1586147514493" />
+    <state width="529" height="610" key="GridCell.Tab.0.left" timestamp="1586147514493">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="529" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1585927920914" />
-    <state width="529" height="610" key="GridCell.Tab.0.right" timestamp="1585927920914">
+    <state width="529" height="610" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1586147514493" />
+    <state width="529" height="610" key="GridCell.Tab.0.right" timestamp="1586147514493">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="529" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1585927920914" />
+    <state width="529" height="610" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1586147514493" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1585828819554">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -344,10 +375,14 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="184" y="41" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1585884435182" />
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1585928148641">
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2" timestamp="1586090874760">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1585928148641" />
+    <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1586090874760" />
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1586146388597">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1586146388597" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
