@@ -200,7 +200,7 @@ class FeederScraper:
                                         if column_akm.text=='' :
                                             row_data.append(' ')
                                         else :
-                                            row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','')).replace(',',''))
+                                            row_data.append(column_akm.text.replace('\t', '').replace('\n', '').replace('\r', '').replace('         ','').replace('         ',''))
                                     # tambahkan prodi dan fakultas
                                     for pf in prodixfakultas:
                                         row_data.append(pf)
