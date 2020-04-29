@@ -17,8 +17,14 @@ from datetime import datetime
 from collections import Counter
 # for lower_rd_r2() function
 import re
+from konfigurasi_ini import default_cookie,default_semester,default_report,default_useragent
 
-
+# print (default_cookie)
+# print (default_semester)
+# print (default_report)
+# print (default_useragent)
+#
+# exit()
 # Awal Class FeederScraper
 class FeederScraper:
     def __init__(self, url, header, payload, report):
@@ -116,6 +122,8 @@ class FeederScraper:
 
                 # objek BeautifulSoup
                 soup = BeautifulSoup(src, features="html.parser")
+                # print(soup)
+                # exit()
 
                 # mencari semua tag yang diinginkan
                 # links = soup.find_all("img")
@@ -205,7 +213,7 @@ class FeederScraper:
                                     for pf in prodixfakultas:
                                         row_data.append(pf)
 
-                                    # write row ke csv
+                                    # write row ke  csv
                                     writer.writerow(row_data)
 
                                     # each individual row_data
@@ -283,9 +291,10 @@ print('\n')
 
 # membuat args
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("--cookie", default='34lldk6825851cn32bhistdt40', help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
-parser.add_argument("--semester", default='20182', help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (tanpa petik)")
-parser.add_argument("--report", default='on', help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (tanpa petik)")
+parser.add_argument("--cookie", default=default_cookie, help="ini adalah cookie dari aplikasi feeder (PHPSESSID) dengan format : 'COOKIEVALUE' (tanpa petik)")
+parser.add_argument("--semester", default=default_semester, help="ini adalah form_data dari aplikasi feeder saat berada dihalaman 'http://private-feeder.ulm.ac.id/home', form_data bisa dilihat melalui Inspect Element, semester dengan contoh format : '20182' (tanpa petik)")
+parser.add_argument("--report", default=default_report, help="ini adalah option untuk menampilkan report jumlah baris per-prodi, format : 'on' atau 'off' (tanpa petik)")
+parser.add_argument("--useragent", default=default_useragent, help="ini adalah option untuk konfigurasi user agent")
 
 # parsing args
 args = parser.parse_args()
@@ -296,6 +305,9 @@ semester=args.semester
 print('Semester yang dipilih : ' + semester)
 report=args.report
 print('Report : ' + report)
+useragent = args.useragent
+print('Cookie yang digunakan : ' + cookie)
+
 
 print('\n')
 
@@ -305,7 +317,7 @@ header = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image
          'Cookie': 'PHPSESSID=' + cookie,
          'Connection':'keep-alive',
          'Cache-Control' : 'max-age=0',
-         'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+         'User-Agent' : useragent,
          'Host':'private-feeder.ulm.ac.id',
          'Accept-Encoding':'gzip, deflate'
          }
