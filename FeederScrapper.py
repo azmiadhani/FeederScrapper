@@ -122,8 +122,8 @@ class FeederScraper:
 
                 # objek BeautifulSoup
                 soup = BeautifulSoup(src, features="html.parser")
-                # print(soup)
-                # exit()
+                print(soup)
+                exit()
 
                 # mencari semua tag yang diinginkan
                 # links = soup.find_all("img")

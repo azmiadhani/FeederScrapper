@@ -5,8 +5,8 @@
 Web Scrapper for Feeder
 
 ## Screenshot
-![Screenshot](https://github.com/azmiadhani/FeederScrapper/blob/master/screenshot/1.png)
-![Screenshot](https://github.com/azmiadhani/FeederScrapper/blob/master/screenshot/2.png)
+![Screenshot](https://github.com/azmiadhani/FeederScrapper/blob/master/screenshot/3.png)
+![Screenshot](https://github.com/azmiadhani/FeederScrapper/blob/master/screenshot/4.png)
 
 
 ## Getting Started
@@ -32,11 +32,8 @@ Setelah requirement telah diinstal maka selanjutnya kita akan menjalankan aplika
 python FeederScrapper.py
 ```
 
-Untuk default launch-nya bisa menggunakan command diatas, namun cookies expiring mungkin terjadi sehingga kita perlu memasukkan cookie yang baru kedalam command launch aplikasi agar bisa mengakses data yang diperlukan, untuk command-command-nya bisa dilihat dengan cara memasukkan command ini : 
+Untuk default launch-nya bisa menggunakan command diatas, namun cookies expiring mungkin terjadi sehingga kita perlu memasukkan cookie yang baru kedalam variable didalam file konfigurasi_ini.py agar bisa mengakses data yang diperlukan : 
 
-```
-python FeederScrapper.py --cookie COOKIEVALUE --semester SEMESTERVALUE --report ON/OFF
-```
 
 ## Configuration
 

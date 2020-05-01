@@ -1,5 +1,5 @@
 # Cookie
-default_cookie = "gj67cdvn303q51l11is4eccrl0"
+default_cookie = "v32t99vpb040gopd3uvch9m6a1"
 
 # Semester
 default_semester = "20182"
@@ -8,4 +8,5 @@ default_semester = "20182"
 default_report = "on"
 
 # User agent
-default_useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"
+default_useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0"
+
