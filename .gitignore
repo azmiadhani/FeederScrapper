@@ -125,6 +125,10 @@ dmypy.json
 .pyre/
 
 # Output file
+workspace.xml
+csv_output/
+csv_output_FS_Peserta/
 extract.csv
 error.txt
-.idea
+.idea/workspace.xml
+.idea/workspace.xml
