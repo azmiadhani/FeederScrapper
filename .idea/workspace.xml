@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeederScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodixfakultas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/prodixfakultas.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586400971431</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fix">
+      <created>1588143109581</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588143109581</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,7 +342,8 @@
     <MESSAGE value="Test push as azmiadhani@gmail.com" />
     <MESSAGE value="some fix" />
     <MESSAGE value="Kelebihan Bracket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kelebihan Bracket" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="235" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1585883793395">
@@ -394,10 +402,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1586400973649" />
-    <state x="379" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1588142971765">
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1588216905536">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="379" y="223" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1588142971765" />
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1588216905536" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
