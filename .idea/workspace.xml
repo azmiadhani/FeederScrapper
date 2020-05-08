@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e139999-25aa-48fe-96f6-5cf94fe13565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeederScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FeederScrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/konfigurasi_ini.py" beforeDir="false" afterPath="$PROJECT_DIR$/konfigurasi_ini.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FS_Peserta.py" beforeDir="false" afterPath="$PROJECT_DIR$/FS_Peserta.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,28 @@
       <recent name="C:\Users\ASUS\PycharmProjects\feederscrapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FeederScrapper (1)">
+  <component name="RunManager" selected="Python.FS_Peserta">
+    <configuration name="FS_Peserta" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="feederscrapper" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FS_Peserta.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="FeederScrapper (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="feederscrapper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,34 +149,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="withcookie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="feederscrapper" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\ASUS\PycharmProjects\feederscrapper\withcookie.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.FS_Peserta" />
         <item itemvalue="Python.FeederScrapper (1)" />
         <item itemvalue="Python.findfak" />
         <item itemvalue="Python.FeederScrapper" />
         <item itemvalue="Python.withcookie (1)" />
-        <item itemvalue="Python.withcookie" />
       </list>
     </recent_temporary>
   </component>
@@ -360,22 +358,26 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="463" y="154" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1585884444052" />
-    <state width="529" height="400" key="GridCell.Tab.0.bottom" timestamp="1588302065878">
-      <screen x="0" y="30" width="1366" height="738" />
+    <state width="769" height="922" key="GridCell.Tab.0.bottom" timestamp="1588326225207">
+      <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="529" height="400" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588302065878" />
-    <state width="529" height="400" key="GridCell.Tab.0.center" timestamp="1588302065878">
-      <screen x="0" y="30" width="1366" height="738" />
+    <state width="769" height="922" key="GridCell.Tab.0.bottom/0.30.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1588326225207" />
+    <state width="253" height="400" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588303050600" />
+    <state width="769" height="922" key="GridCell.Tab.0.center" timestamp="1588326225207">
+      <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="529" height="400" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1588302065878" />
-    <state width="529" height="400" key="GridCell.Tab.0.left" timestamp="1588302065878">
-      <screen x="0" y="30" width="1366" height="738" />
+    <state width="769" height="922" key="GridCell.Tab.0.center/0.30.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1588326225207" />
+    <state width="253" height="400" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1588303050599" />
+    <state width="769" height="922" key="GridCell.Tab.0.left" timestamp="1588326225207">
+      <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="529" height="400" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1588302065878" />
-    <state width="529" height="400" key="GridCell.Tab.0.right" timestamp="1588302065878">
-      <screen x="0" y="30" width="1366" height="738" />
+    <state width="769" height="922" key="GridCell.Tab.0.left/0.30.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1588326225207" />
+    <state width="253" height="400" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1588303050599" />
+    <state width="769" height="922" key="GridCell.Tab.0.right" timestamp="1588326225207">
+      <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="529" height="400" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588302065878" />
+    <state width="769" height="922" key="GridCell.Tab.0.right/0.30.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1588326225207" />
+    <state width="253" height="400" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588303050599" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1585828819554">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -404,10 +406,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="275" y="132" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1586400973649" />
-    <state x="379" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1588301872102">
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog" timestamp="1588945755823">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="379" y="223" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1588301872102" />
+    <state x="379" y="223" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1588945755823" />
     <state x="385" y="190" key="git4idea.merge.GitPullDialog" timestamp="1585890071961">
       <screen x="0" y="30" width="1366" height="738" />
     </state>

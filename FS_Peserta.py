@@ -211,7 +211,7 @@ class FeederScraper:
             # pbar.update(10)
         # pbar.close()
         print('')
-        print('Scraping selesai, silahkan cek file di csv_output_FS_Peserta/'+nama_file)
+        print('Scraping selesai, silahkan cek file di '+nama_file)
 
 # Akhir Class FeederScraper
 
